@@ -1,0 +1,105 @@
+fun main() {
+
+    val cyfra: Int = 107
+    loopaC(cyfra)
+
+}
+
+
+fun loopaA(liczba: Int){
+    val cyfry_wyrazy = listOf("zero","jeden", "dwa", "trzy", "cztery", "piec", "szesc", "siedem", "osiem", "dziewiec", "puste", "jedenascie", "puste", "trzynaście")
+    //split liczby na 2 części - zrobienie listy
+    val str_liczba: String = "$liczba"
+    val lista_liczba = str_liczba.toList()
+    val liczby_sprawdzane: Int = 35
+    val str_l = liczby_sprawdzane.toString()
+
+   // println(str_l.toString()[0].toString().toInt())
+    
+    for (dana_cyfra in 1..liczba-1) {
+        var rozwiazanie = mutableListOf<String>()
+        
+        for (sprawdzanaCyfra in str_l.map { it.toString().toInt() }) {
+           
+            if (dana_cyfra % sprawdzanaCyfra == 0 && cyfry_wyrazy.getOrNull(sprawdzanaCyfra) != null) {
+                val slowo = cyfry_wyrazy[sprawdzanaCyfra]
+                if (!rozwiazanie.contains(slowo)) {
+                    rozwiazanie.add(slowo)
+                }
+            }
+        }
+        
+        if (rozwiazanie.isEmpty()) {
+            println(dana_cyfra)
+        } else {
+            println(rozwiazanie.joinToString(""))
+        }
+    }
+   
+}
+
+
+fun loopaB(liczba: Int){
+    val cyfry_wyrazy = listOf("zero","jeden", "dwa", "trzy", "cztery", "piec", "szesc", "siedem", "osiem", "dziewiec", "puste", "jedenascie", "puste", "trzynaście")
+    //split liczby na 2 części - zrobienie listy
+    val str_liczba: String = "$liczba"
+    val lista_liczba = str_liczba.toList()
+    val liczby_sprawdzane: Int = 357
+    val str_l = liczby_sprawdzane.toString()
+
+  
+    
+    for (dana_cyfra in 1..liczba-1) {
+        var rozwiazanie = mutableListOf<String>()
+        
+        for (sprawdzanaCyfra in str_l.map { it.toString().toInt() }) {
+           
+            if (dana_cyfra % sprawdzanaCyfra == 0 && cyfry_wyrazy.getOrNull(sprawdzanaCyfra) != null) {
+                val slowo = cyfry_wyrazy[sprawdzanaCyfra]
+                if (!rozwiazanie.contains(slowo)) {
+                    rozwiazanie.add(slowo)
+                }
+            }
+        }
+        
+        if (rozwiazanie.isEmpty()) {
+            println(dana_cyfra)
+        } else {
+            println(rozwiazanie.joinToString(""))
+        }
+    }
+   
+}
+
+fun loopaC(liczba: Int){
+    val cyfry_wyrazy = listOf("zero","jeden", "dwa", "trzy", "cztery", "piec", "szesc", "siedem", "osiem", "dziewiec", "puste", "jedenascie", "puste", "trzynaście")
+    //split liczby na 2 części - zrobienie listy
+    val str_liczba: String = "$liczba"
+    val lista_liczba = str_liczba.toList()
+    val liczby_sprawdzane: Int = 357
+    val str_l = liczby_sprawdzane.toString().map { it.toString() }.toMutableList()
+	str_l.add("11") 
+    str_l.add("13") 
+  
+    
+    for (dana_cyfra in 1..liczba-1) {
+        var rozwiazanie = mutableListOf<String>()
+        
+        for (sprawdzanaCyfra in str_l.map { it.toString().toInt() }) {
+           
+            if (dana_cyfra % sprawdzanaCyfra == 0 && cyfry_wyrazy.getOrNull(sprawdzanaCyfra) != null) {
+                val slowo = cyfry_wyrazy[sprawdzanaCyfra]
+                if (!rozwiazanie.contains(slowo)) {
+                    rozwiazanie.add(slowo)
+                }
+            }
+        }
+        
+        if (rozwiazanie.isEmpty()) {
+            println(dana_cyfra)
+        } else {
+            println(rozwiazanie.joinToString(""))
+        }
+    }
+   
+}

@@ -1,0 +1,16 @@
+fun main() {
+    val wyraz = "abbaa"
+    print(Palindrom(wyraz))
+}
+
+
+fun Palindrom(wyraz: String): String {
+    val pojedyncze_wyrazy = wyraz.toString() // Niepotrzebna konwersja, ale zostawiam dla przejrzystości
+    
+    for (i in 0 until pojedyncze_wyrazy.length / 2) { // Sprawdzamy tylko połowę znaków
+        if (pojedyncze_wyrazy[i] != pojedyncze_wyrazy[pojedyncze_wyrazy.length - 1 - i]) {
+            return "Nie palindrom"
+        }
+    }
+    return "Palindrom"
+}

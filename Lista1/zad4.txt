@@ -1,0 +1,27 @@
+import kotlin.math.*
+
+fun main() {
+    //użycie double powoduje lepszą manipulacje w funkcji sqrt 
+    val liczba = 28
+    
+    //sprawdzenie czy liczba jest doskonała: dla sprawdzenia liczby 6 i 28 są doskonałe
+    println(czy_doskonala(liczba))
+}
+
+fun czy_doskonala(liczba: Int): Any {
+    var s = 1
+    val p = sqrt(liczba.toDouble())
+
+    for (i in 2..p.toInt()) {
+        if (liczba % i == 0) {
+            s += i + (liczba / i)
+        }
+    }
+
+    
+    if (p == p.toInt().toDouble()) {
+        s -= p.toInt()
+    }
+
+    return if (liczba == s) "Liczba jest doskonała" else "Liczba nie jest doskonała"
+}

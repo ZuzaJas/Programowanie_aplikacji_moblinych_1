@@ -1,0 +1,24 @@
+import kotlin.math.*
+
+fun main() {
+    val liczba = 153
+    println(CzyArmstrong(liczba))
+}
+
+
+fun CzyArmstrong(liczba: Int): Any{
+    val cyfry = liczba.toString()
+    val lista_cyfr = cyfry.map { it.toString().toInt() }
+    var wartosc: Double = 0.0
+    for (cyf in lista_cyfr){
+        val potegowana = cyf.toDouble().pow(lista_cyfr.size)
+        wartosc = wartosc + potegowana
+    }
+    
+    if (wartosc==liczba.toDouble()){
+        return "Liczba Armstronga"
+    }else{
+        return "Nie liczba Armstronga" 
+    }
+    
+}
